@@ -22,17 +22,17 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Descrição
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Microserviço completo para notificações com rotas para criação, listagem, leitura e cancelamento das notificações criadas, que foi desenvolvida no ignite lab de node da rocketseat.
 
-## Installation
+## Instalação do projeto
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+## Rodando o app
 
 ```bash
 # development
@@ -45,7 +45,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Testes
 
 ```bash
 # unit tests
@@ -58,16 +58,24 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Rotas 
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```
+# Get - notificações de um ID de um recipient.
+/notifications/from/{recipientId}
 
-## Stay in touch
+# Get - contagens de notificações de um ID de um recipient.
+/notifications/count/from/{recipientId}
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+# Post - enviar/criar notificação.
+/notifications
 
-## License
+#Patch - cancelar notificação.
+/notifications/{recipientId}/cancel
 
-Nest is [MIT licensed](LICENSE).
+#Patch - leitura da notificação.
+/notifications/{recipientId}/read
+
+#Patch - desmarcar leitura da notificação.
+/notifications/{recipientId}/unread
+```
